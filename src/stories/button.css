@@ -1,0 +1,69 @@
+.storybook-button {
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  color: white;
+}
+.storybook-button--primary {
+  /* color: white; */
+  background-color: blue;
+}
+.storybook-button--danger {
+  background-color: red;
+}
+.storybook-button--success {
+  background-color: green;
+}
+.storybook-button--warning {
+  background-color: yellow;
+}
+.storybook-button--default {
+  background-color: black;
+}
+/* .storybook-button--secondary {
+  color: #333;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+} */
+.storybook-button--small {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+/* .storybook-button--medium {
+  font-size: 14px;
+  padding: 11px 20px;
+} */
+.storybook-button--large {
+  font-size: 16px;
+  padding: 12px 24px;
+}
+
+.button-outline--primary {
+  color: blue;
+  border: 2px solid blue;
+  background-color: transparent;
+}
+.button-outline--danger {
+  color: red;
+  border: 2px solid red;
+  background-color: transparent;
+}
+.button-outline--success {
+  color: green;
+  border: 2px solid green;
+  background-color: transparent;
+}
+.button-outline--warning {
+  color: yellow;
+  border: 2px solid yellow;
+  background-color: transparent;
+}
+.button-outline--default {
+  color: black;
+  border: 2px solid black;
+  background-color: transparent;
+}
