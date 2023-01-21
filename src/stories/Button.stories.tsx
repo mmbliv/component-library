@@ -19,33 +19,33 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
+export const SimplyButton = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  type: 'primary',
+SimplyButton.args = {
+  type: 'default',
+  label: 'Do something',
+};
+
+export const ButtonWithIcon = Template.bind({});
+ButtonWithIcon.args = {
+  icon:'../logo.svg',
   label: 'Button',
 };
 
-export const Danger = Template.bind({});
-Danger.args = {
-  type:'danger',
-  label: 'Button',
-};
+// export const Success = Template.bind({});
+// Success.args = {
+//   type:'success',
+//   label: 'Button',
+// };
 
-export const Success = Template.bind({});
-Success.args = {
-  type:'success',
-  label: 'Button',
-};
+// export const Warning = Template.bind({});
+// Warning.args = {
+//   type:'warning',
+//   label: 'Button',
+// };
 
-export const Warning = Template.bind({});
-Warning.args = {
-  type:'warning',
-  label: 'Button',
-};
-
-export const Default = Template.bind({})
-Default.args={
-  type:'default',
-  label:'Button',
-}
+// export const Default = Template.bind({})
+// Default.args={
+//   type:'default',
+//   label:'Button',
+// }

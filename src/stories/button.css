@@ -10,19 +10,19 @@
 }
 .storybook-button--primary {
   /* color: white; */
-  background-color: blue;
+  background-color: #2e90e5;
 }
 .storybook-button--danger {
-  background-color: red;
+  background-color: #ff4858;
 }
 .storybook-button--success {
-  background-color: green;
+  background-color: #39db39;
 }
 .storybook-button--warning {
-  background-color: yellow;
+  background-color: #ffd33a;
 }
 .storybook-button--default {
-  background-color: black;
+  background-color: #383b3d;
 }
 /* .storybook-button--secondary {
   color: #333;
@@ -43,27 +43,59 @@
 }
 
 .button-outline--primary {
-  color: blue;
-  border: 2px solid blue;
+  color: #2e90e5;
+  border: 2px solid #2e90e5;
   background-color: transparent;
 }
 .button-outline--danger {
-  color: red;
-  border: 2px solid red;
+  color: #ff4858;
+  border: 2px solid #ff4858;
   background-color: transparent;
 }
 .button-outline--success {
-  color: green;
-  border: 2px solid green;
+  color: #39db39;
+  border: 2px solid #39db39;
   background-color: transparent;
 }
 .button-outline--warning {
-  color: yellow;
-  border: 2px solid yellow;
+  color: #ffd33a;
+  border: 2px solid #ffd33a;
   background-color: transparent;
 }
 .button-outline--default {
-  color: black;
-  border: 2px solid black;
+  color: #383b3d;
+  border: 2px solid #383b3d;
   background-color: transparent;
+}
+
+.button--primary--lighter {
+  background-color: #33a0ff;
+}
+.button--danger--lighter {
+  background-color: #ff6875;
+}
+.button--success--lighter {
+  background-color: #6de26d;
+}
+.button--warning--lighter {
+  background-color: #ffda58;
+}
+.button--default--lighter {
+  background-color: #4f5355;
+}
+
+.button--primary--darker {
+  background-color: #2678bf;
+}
+.button--danger--darker {
+  background-color: #ff4252;
+}
+.button--success--darker {
+  background-color: #0ad00a;
+}
+.button--warning--darker {
+  background-color: #ffc600;
+}
+.button--default--darker {
+  background-color: black;
 }
