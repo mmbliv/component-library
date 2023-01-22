@@ -13,12 +13,10 @@ export default {
     // borderColor:{control:'color'},
     // color:{control:'color'}
     // hasOutline: { control: "boolean" },
-    hasIcon: { control: "boolean" },
     type: {
-      control: { type: "select", if: { arg: "hasIcon", truthy: "false" } },
+      control: { type: "select" },
     },
-    icon: { control: "radio", if: { arg: "hasIcon" } },
-    outline: { control: "boolean", if: { arg: "outline" } },
+    icon: { control: "radio" },
   },
 } as ComponentMeta<typeof Button>;
 
@@ -30,26 +28,36 @@ export const SimplyButton = Template.bind({});
 SimplyButton.args = {
   type: "default",
   label: "Do something",
-  outline: false,
+  // outline: false,
   // icon: "none",
-  hasIcon: false,
+  // hasIcon: false,
   // hasOutline: false,
+};
+SimplyButton.parameters = {
+  controls: {
+    include: ["type", "label", "size", "darker", "lighter"],
+  },
 };
 
 export const ButtonWithIcon = Template.bind({});
+ButtonWithIcon.parameters = {
+  controls: { include: ["icon", "size", "label"] },
+};
 ButtonWithIcon.args = {
-  // label: "Button",
   hasIcon: true,
   outline: false,
-  // hasOutline: false,
 };
 
 export const ButtonWithOutline = Template.bind({});
 ButtonWithOutline.args = {
+  type: "default",
   label: "Do something",
   // hasOutline: true,
   outline: true,
   hasIcon: false,
+};
+ButtonWithOutline.parameters = {
+  controls: { include: ["size", "label", "type"] },
 };
 // export const Success = Template.bind({});
 // Success.args = {

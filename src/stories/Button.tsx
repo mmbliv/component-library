@@ -20,7 +20,7 @@ interface ButtonProps {
    */
   outline?: boolean;
   label?: string;
-  hasIcon: boolean;
+  hasIcon?: boolean;
   icon?: "heart" | "cart";
   darker?: boolean;
   lighter?: boolean;
