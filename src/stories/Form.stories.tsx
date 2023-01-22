@@ -9,9 +9,9 @@ export default {
     // backgroundColor: { control: 'color' },
     // borderColor:{control:'color'},
     // color:{control:'color'}
-    option: {
-      control: "object",
-    },
+    // options: {
+    //   control: "array",
+    // },
   },
 } as ComponentMeta<typeof Form>;
 
@@ -22,8 +22,15 @@ export const FormWithTextInput = Template.bind({});
 FormWithTextInput.args = {
   type: "textInput",
 };
+FormWithTextInput.parameters = {
+  controls: { exclude: ["option", "type"] },
+};
+
 export const FormWithOption = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 FormWithOption.args = {
   type: "selectInput",
+};
+FormWithOption.parameters = {
+  controls: { include: ["options"] },
 };

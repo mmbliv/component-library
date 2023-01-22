@@ -9,29 +9,24 @@ interface FormProps {
     | "numberInout"
     | "textInputWithButton"
     | "checkBox";
-  option?: { id: number; value: string }[];
+  options?: { [key: number]: string };
 }
 
 export const Form = ({
   label,
   placeHolder,
   type,
-  option = [{ id: 1, value: "select" }],
+  options = { 1: "select" },
 }: FormProps) => {
-  //   const options = () => {
-  //     if (option && typeof option === "object") {
-  //       console.log(option);
-  //       return option.map((i, index) => {
-  //         return (
-  //           <option key={index} value={i}>
-  //             {i}
-  //           </option>
-  //         );
-  //       });
-  //     } else {
-  //       return null;
-  //     }
-  //   };
+  const setOptions = () => {
+    const optionArr = [];
+    for (let i in options) {
+      optionArr.push([i, options[i]]);
+    }
+    // const optionArr = Object.entries(options);
+    // console.log(optionArr);
+    return optionArr;
+  };
   if (type === "textInput")
     return (
       <form>
@@ -52,14 +47,18 @@ export const Form = ({
     return (
       <form>
         <select name="select" id="select">
+          {setOptions().map((o) => {
+            return <option key={o[0]}>{o[1]}</option>;
+          })}
           {/* {options()} */}
-          {option.map((i) => {
+          {/* {options.map((i) => {
             return (
-              <option key={i.id} value={i.value}>
+              <option key={i.key} value={i.value}>
                 {i.value}
               </option>
             );
-          })}
+          })} */}
+          {/* <option value={options.value}>{options.value}</option> */}
         </select>
       </form>
     );
