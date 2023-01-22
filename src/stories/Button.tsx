@@ -1,11 +1,12 @@
-import React, { ElementType } from 'react';
-import './button.css';
-
+import React from "react";
+import "./button.css";
+import { BsHeart } from "react-icons/bs";
+import { BsCart } from "react-icons/bs";
 interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
-  type?:'primary' | 'danger' | 'success' | 'warning' | 'default';
+  type?: "primary" | "danger" | "success" | "warning" | "default";
   /**
    * What background color to use
    */
@@ -13,15 +14,16 @@ interface ButtonProps {
   /**
    * How large should the button be?
    */
-  size?: 'small' |  'large';
+  size?: "small" | "large";
   /**
    * Button contents
    */
-  outline?:boolean;
+  outline?: boolean;
   label?: string;
-  icon?:string;
-  darker?:boolean;
-  lighter?:boolean;
+  hasIcon: boolean;
+  icon?: "heart" | "cart";
+  darker?: boolean;
+  lighter?: boolean;
   // color:string;
   // borderColor:string;
   /**
@@ -34,8 +36,8 @@ interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const Button = ({
-  type = 'default',
-  size = 'small',
+  type = "default",
+  size = "small",
   // backgroundColor,
   // color,
   // borderColor,
@@ -44,34 +46,53 @@ export const Button = ({
   label,
   icon,
   outline,
+  hasIcon,
   ...props
 }: ButtonProps) => {
   // const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-   const displayOutline=outline && `button-outline--${type}`
-   const darkerColor=darker && `button--${type}--darker`
-   const lighterColor= lighter && `button--${type}--lighter`
-   if(icon){
-    return(
+  const displayOutline = outline && `button-outline--${type}`;
+  const darkerColor = darker && `button--${type}--darker`;
+  const lighterColor = lighter && `button--${type}--lighter`;
+  const setIcon = () => {
+    if (icon === "heart") {
+      return <BsHeart />;
+    }
+    if (icon === "cart") {
+      return <BsCart />;
+    }
+  };
+  if (hasIcon) {
+    return (
       <button
-      // type="button"
-      className={['button--primary--lighter','storybook-button', `storybook-button--${size}`, `storybook-button--${type}`].join(' ')}
-      // style={{ backgroundColor,color,borderColor }}
-      {...props}
-    >
-      
-      <img src={icon} alt="icon" />
-      {label}
-    </button>
-    ) 
-   }
+        // type="button"
+        className={[
+          "button--icon",
+          "storybook-button",
+          `storybook-button--${size}`,
+          `storybook-button--${type}`,
+        ].join(" ")}
+        // style={{ backgroundColor,color,borderColor }}
+        // {...props}
+      >
+        {setIcon()}
+        {label}
+      </button>
+    );
+  }
   return (
     <button
-      type="button"
-      className={[darkerColor,lighterColor,displayOutline,'storybook-button', `storybook-button--${size}`, `storybook-button--${type}`].join(' ')}
+      // type="button"
+      className={[
+        darkerColor,
+        lighterColor,
+        displayOutline,
+        "storybook-button",
+        `storybook-button--${size}`,
+        `storybook-button--${type}`,
+      ].join(" ")}
       // style={{ backgroundColor,color,borderColor }}
-      {...props}
+      // {...props}
     >
-      
       {label}
     </button>
   );

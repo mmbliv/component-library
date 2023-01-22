@@ -7,6 +7,10 @@
   display: inline-block;
   line-height: 1;
   color: white;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
 }
 .storybook-button--primary {
   /* color: white; */
@@ -98,4 +102,9 @@
 }
 .button--default--darker {
   background-color: black;
+}
+
+.button--icon {
+  background-color: #c1c8ce;
+  color: #33a0ff;
 }

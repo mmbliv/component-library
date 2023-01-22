@@ -1,0 +1,11 @@
+.form--text-input {
+  display: flex;
+  flex-direction: column;
+}
+.form-lable {
+  /* margin-bottom: 8px; */
+}
+.form-input--text {
+  margin-top: 8px;
+  border-color: 1px solid rgb(162, 158, 158);
+}
