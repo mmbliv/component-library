@@ -1,6 +1,7 @@
 import { kMaxLength } from "buffer";
 import { string } from "prop-types";
 import React, { useState, useRef } from "react";
+import { Button } from "./Button";
 import "./form.css";
 interface FormProps {
   label?: string;
@@ -14,8 +15,9 @@ interface FormProps {
   options?: { [key: number]: string };
   min?: number;
   max?: number;
-  step: number;
+  step?: number;
   startValue?: number;
+  size?: "small" | "large";
 }
 
 export const Form = ({
@@ -27,6 +29,7 @@ export const Form = ({
   max,
   step = 1,
   startValue,
+  size,
 }: FormProps) => {
   const refNumber = useRef<HTMLInputElement>(null);
   const increase = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -58,35 +61,39 @@ export const Form = ({
 
   if (type === "textInput")
     return (
-      <form>
-        <label htmlFor="email" className="form-label">
-          {label}
-        </label>
+      <>
+        {label ? (
+          <label htmlFor="email" className="form-label">
+            {label}
+          </label>
+        ) : null}
+
         <br />
         <input
           type="text"
           name="email"
           id="email"
           placeholder={placeHolder || label}
-          className="form-input--text"
+          // className="form-input--text"
+          className={["form-input--text", `form-input--text-${size}`].join(" ")}
         />
-      </form>
+      </>
     );
 
   if (type === "selectInput")
     return (
-      <form>
+      <>
         <select name="select" id="select">
           {setOptions().map((o) => {
             return <option key={o[0]}>{o[1]}</option>;
           })}
         </select>
-      </form>
+      </>
     );
 
   if (type === "numberInput")
     return (
-      <form className="number-input">
+      <div className="number-input">
         <button onClick={(e) => decrease(e)}></button>
         <input
           type="number"
@@ -102,6 +109,14 @@ export const Form = ({
           // onChange={}
         />
         <button className="plus" onClick={(e) => increase(e)}></button>
+      </div>
+    );
+
+  if (type === "textInputWithButton")
+    return (
+      <form className="input-btn">
+        <Form type="textInput" placeHolder={placeHolder} size={size} />
+        <Button type="primary" label={label} size={size} />
       </form>
     );
 

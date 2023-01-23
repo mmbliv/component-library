@@ -6,9 +6,21 @@
   /* margin-bottom: 8px; */
 }
 .form-input--text {
-  margin-top: 8px;
+  /* margin-top: 8px; */
   border-color: 1px solid rgb(162, 158, 158);
+  /* height: 23px; */
 }
+.form-input--text-small {
+  /* font-size: 10px; */
+  /* padding: 12px; */
+  height: 23px;
+}
+.form-input--text-large {
+  /* padding: 12px; */
+  /* font-size: 16px; */
+  height: 28px;
+}
+/* change input number default style */
 input[type="number"] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
@@ -68,4 +80,12 @@ input[type="number"]::-webkit-outer-spin-button {
   height: 3rem;
   font-weight: bold;
   text-align: center;
+}
+
+.input-btn {
+  display: flex;
+  align-items: center;
+  /* height: 40rem; */
+  /* justify-content: center; */
+  /* flex-direction: column; */
 }

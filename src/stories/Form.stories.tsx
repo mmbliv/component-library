@@ -23,7 +23,7 @@ FormWithTextInput.args = {
   type: "textInput",
 };
 FormWithTextInput.parameters = {
-  controls: { include: ["label", "placeHolder"] },
+  controls: { include: ["label", "placeHolder", "size"] },
 };
 
 export const FormWithOption = Template.bind({});
@@ -41,4 +41,14 @@ FormWithNumber.args = {
 };
 FormWithNumber.parameters = {
   controls: { include: ["min", "max", "step", "startValue"] },
+};
+
+export const FormWithButton = Template.bind({});
+FormWithButton.args = {
+  type: "textInputWithButton",
+};
+FormWithButton.parameters = {
+  controls: {
+    include: ["placeHolder", "label", "size"],
+  },
 };
