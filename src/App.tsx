@@ -6,7 +6,7 @@ import { Form } from "./stories/Form";
 function App() {
   return (
     <div className="App">
-      <Form type="selectInput" />
+      <Form type="numberInput" />{" "}
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import { kMaxLength } from "buffer";
+import { string } from "prop-types";
 import React from "react";
 import "./form.css";
 interface FormProps {
@@ -6,10 +8,14 @@ interface FormProps {
   type?:
     | "textInput"
     | "selectInput"
-    | "numberInout"
+    | "numberInput"
     | "textInputWithButton"
     | "checkBox";
   options?: { [key: number]: string };
+  min?: string;
+  max?: string;
+  step?: string;
+  startValue?: string;
 }
 
 export const Form = ({
@@ -17,16 +23,19 @@ export const Form = ({
   placeHolder,
   type,
   options = { 1: "select" },
+  min,
+  max,
+  step,
+  startValue,
 }: FormProps) => {
   const setOptions = () => {
     const optionArr = [];
     for (let i in options) {
       optionArr.push([i, options[i]]);
     }
-    // const optionArr = Object.entries(options);
-    // console.log(optionArr);
     return optionArr;
   };
+
   if (type === "textInput")
     return (
       <form>
@@ -43,6 +52,7 @@ export const Form = ({
         />
       </form>
     );
+
   if (type === "selectInput")
     return (
       <form>
@@ -50,17 +60,25 @@ export const Form = ({
           {setOptions().map((o) => {
             return <option key={o[0]}>{o[1]}</option>;
           })}
-          {/* {options()} */}
-          {/* {options.map((i) => {
-            return (
-              <option key={i.key} value={i.value}>
-                {i.value}
-              </option>
-            );
-          })} */}
-          {/* <option value={options.value}>{options.value}</option> */}
         </select>
       </form>
     );
+
+  if (type === "numberInput")
+    return (
+      <form>
+        <input
+          type="number"
+          id="number"
+          name="number"
+          min={min}
+          max={max}
+          step={step}
+          defaultValue={startValue}
+          // onChange={}
+        />
+      </form>
+    );
+
   return <p>huhuhu</p>;
 };
