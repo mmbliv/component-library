@@ -97,3 +97,17 @@ input[type="number"]::-webkit-outer-spin-button {
   /* justify-content: center; */
   /* flex-direction: column; */
 }
+
+.checkbox-blue {
+  accent-color: #33a0ff;
+}
+.checkbox-black {
+  accent-color: black;
+}
+.checkbox {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: row; */
+}

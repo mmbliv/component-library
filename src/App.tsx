@@ -6,7 +6,8 @@ import { Form } from "./stories/Form";
 function App() {
   return (
     <div className="App">
-      <Form type="textInputWithButton" size="large" />
+      {/* <Form type="textInputWithButton" size="large" /> */}
+      <Form type="checkBox" checkboxColor="blue" labelCheckbox="hello" />
     </div>
   );
 }

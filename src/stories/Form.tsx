@@ -21,6 +21,10 @@ interface FormProps {
   // valueOfTextInput?: string;
   value?: string;
   handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  labelCheckbox?: string;
+  valueCheckbox?: string;
+  checkedState?: boolean;
+  checkboxColor?: "blue" | "black";
 }
 
 export const Form = ({
@@ -35,6 +39,10 @@ export const Form = ({
   size,
   value,
   handleChange,
+  valueCheckbox,
+  labelCheckbox,
+  checkedState,
+  checkboxColor,
 }: // valueOfTextInput,
 // value,
 FormProps) => {
@@ -159,6 +167,21 @@ FormProps) => {
           }}
         />
       </form>
+    );
+
+  if (type === "checkBox")
+    return (
+      <div className="checkbox">
+        <input
+          type="checkbox"
+          id="checkbox"
+          name="checkbox"
+          value={valueCheckbox}
+          checked={checkedState}
+          className={[`checkbox-${checkboxColor}`].join(" ")}
+        />
+        {labelCheckbox && <label htmlFor="checkbox">{labelCheckbox}</label>}
+      </div>
     );
 
   return <p>huhuhu</p>;

@@ -52,3 +52,18 @@ FormWithButton.parameters = {
     include: ["placeHolder", "label", "size", "handleOnClick"],
   },
 };
+
+export const FormCheckbox = Template.bind({});
+FormCheckbox.args = {
+  type: "checkBox",
+};
+FormCheckbox.parameters = {
+  controls: {
+    include: [
+      "checkedState",
+      "valueCheckbox",
+      "labelCheckbox",
+      "checkboxColor",
+    ],
+  },
+};
