@@ -29,7 +29,11 @@ interface ButtonProps {
   /**
    * Optional click handler
    */
-  onClick?: () => void;
+  handleOnClick?: (
+    e:
+      | React.MouseEvent<HTMLButtonElement, MouseEvent>
+      | React.FormEvent<HTMLFormElement>
+  ) => void;
 }
 
 /**
@@ -47,7 +51,7 @@ export const Button = ({
   icon,
   outline,
   hasIcon,
-  ...props
+  handleOnClick,
 }: ButtonProps) => {
   // const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   const displayOutline = outline && `button-outline--${type}`;
@@ -61,6 +65,13 @@ export const Button = ({
       return <BsCart />;
     }
   };
+  // handleOnClick = function (
+  //   e:
+  //     | React.MouseEvent<HTMLButtonElement, MouseEvent>
+  //     | React.FormEvent<HTMLFormElement>
+  // ) {
+  //   e.preventDefault();
+  // };
   if (hasIcon) {
     return (
       <button
@@ -92,6 +103,8 @@ export const Button = ({
       ].join(" ")}
       // style={{ backgroundColor,color,borderColor }}
       // {...props}
+      // {handleOnClick && onClick={e=>onClick(e)}}
+      onClick={handleOnClick}
     >
       {label}
     </button>

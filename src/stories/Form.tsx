@@ -18,6 +18,9 @@ interface FormProps {
   step?: number;
   startValue?: number;
   size?: "small" | "large";
+  // valueOfTextInput?: string;
+  value?: string;
+  handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Form = ({
@@ -30,8 +33,14 @@ export const Form = ({
   step = 1,
   startValue,
   size,
-}: FormProps) => {
+  value,
+  handleChange,
+}: // valueOfTextInput,
+// value,
+FormProps) => {
+  const refTextInput = useRef<HTMLInputElement>(null);
   const refNumber = useRef<HTMLInputElement>(null);
+  const [textInputValue, setTextInputValue] = useState("");
   const increase = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     const currenValue = +refNumber.current!.value;
@@ -49,8 +58,11 @@ export const Form = ({
     if (currenValue > min!) {
       let n = +refNumber.current!.value - step;
       refNumber.current!.value = n.toString();
+    } else {
+      return;
     }
   };
+
   const setOptions = () => {
     const optionArr = [];
     for (let i in options) {
@@ -58,7 +70,12 @@ export const Form = ({
     }
     return optionArr;
   };
-
+  // let valueOfTextInput: string = "jiji";
+  // console.log(textValue);
+  // const submit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   console.log(e.target);
+  // };
   if (type === "textInput")
     return (
       <>
@@ -70,12 +87,16 @@ export const Form = ({
 
         <br />
         <input
+          value={value}
+          onChange={handleChange}
+          // ref={refTextInput}
           type="text"
           name="email"
           id="email"
           placeholder={placeHolder || label}
           // className="form-input--text"
           className={["form-input--text", `form-input--text-${size}`].join(" ")}
+          // valueOfTextInput={textValue}
         />
       </>
     );
@@ -115,8 +136,28 @@ export const Form = ({
   if (type === "textInputWithButton")
     return (
       <form className="input-btn">
-        <Form type="textInput" placeHolder={placeHolder} size={size} />
-        <Button type="primary" label={label} size={size} />
+        <Form
+          type="textInput"
+          placeHolder={placeHolder}
+          size={size}
+          value={textInputValue}
+          handleChange={(e) => {
+            setTextInputValue(e.target.value);
+            // value = textInputValue;
+          }}
+
+          // value=""
+          // valueOfTextInput={valueOfTextInput}
+        />
+        <Button
+          type="primary"
+          label={label}
+          size={size}
+          handleOnClick={(e) => {
+            e.preventDefault();
+            console.log(textInputValue);
+          }}
+        />
       </form>
     );
 

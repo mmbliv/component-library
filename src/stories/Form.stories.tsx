@@ -49,6 +49,6 @@ FormWithButton.args = {
 };
 FormWithButton.parameters = {
   controls: {
-    include: ["placeHolder", "label", "size"],
+    include: ["placeHolder", "label", "size", "handleOnClick"],
   },
 };

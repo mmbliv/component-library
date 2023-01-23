@@ -17,6 +17,7 @@ export default {
       control: { type: "select" },
     },
     icon: { control: "radio" },
+    handleOnClick: { action: "clicked" },
   },
 } as ComponentMeta<typeof Button>;
 
@@ -35,7 +36,7 @@ SimplyButton.args = {
 };
 SimplyButton.parameters = {
   controls: {
-    include: ["type", "label", "size", "darker", "lighter"],
+    include: ["type", "label", "size", "darker", "lighter", "handleOnClick"],
   },
 };
 
