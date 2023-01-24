@@ -114,3 +114,10 @@
 .small-star {
   height: 10px;
 }
+.product-inline--description {
+  font-size: small;
+}
+.product-inline--btns {
+  display: flex;
+  justify-content: center;
+}

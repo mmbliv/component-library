@@ -108,7 +108,7 @@ export const Product = ({
         <p className="product--price">
           ${price} <span className="product--old-price">${oldPrice}</span>
         </p>
-        <p>
+        <p className="product-inline--description">
           Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et
           mattis vulputate, tristique ut lectus. Sed et lectus lorem nunc
           leifend laorevtr istique et congue. Vivamus adipiscin vulputate g nisl
