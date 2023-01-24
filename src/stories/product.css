@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-.product-column {
+.product-block--column {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,42 +15,102 @@
   /* border: 2px solid black; */
   padding: 35px 15px;
 }
-.product-row {
+.product-block--row {
   flex-direction: row;
   gap: 20px;
   padding: 35px 25px;
 }
-.line {
+.product-block--line {
   height: 2px;
   width: 100%;
   background-color: #e5e8ea;
   margin-bottom: 10px;
 }
-.stars {
+.product-block--stars {
   margin-bottom: 10px;
 }
-.product-img {
+.product-block--img {
   margin-bottom: 20px;
 }
-.img-container {
+.product-block--img-container {
   position: relative;
 }
-.product-name {
+.product-block--name {
   margin-bottom: 20px;
+  font-weight: bolder;
 }
-.border {
+.product-block--border {
   border: 2px solid #e5e8ea;
 }
-.background {
+.product-block--background {
   background-color: #f1f3f4;
 }
-.product-price {
+.product--price {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  color: red;
 }
-.old-price {
+.product--old-price {
   text-decoration: line-through;
   color: #c1c8ce;
+}
+/* product inline */
+.product-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  gap: 20px;
+  /* border: 1px solid red; */
+}
+.product-inline--img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.product-inline--img-container {
+  position: relative;
+  padding: 20px 10px;
+  border: 2px solid #f1f3f4;
+  height: 100%;
+  width: 70%;
+}
+.badge--hot {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  height: 15px;
+}
+.product-inline--content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* border: 1px solid rebeccapurple; */
+  height: 100%;
+}
+.product-inline--name {
+  font-size: large;
+  font-weight: bolder;
+}
+.product-inline--review-container {
+  display: flex;
+  gap: 10px;
+  /* justify-content: center; */
+  align-items: center;
+}
+.product-inline--review {
+  font-size: smaller;
+  color: #bbc1c5;
+}
+.product-inline--submit-review {
+  font-size: small;
+  color: #2e90e5;
+  font-weight: bold;
+  text-decoration: none;
+}
+.small-star {
+  height: 10px;
 }

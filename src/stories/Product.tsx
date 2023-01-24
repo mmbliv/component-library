@@ -1,11 +1,12 @@
 import "./product.css";
+import { Button } from "./Button";
 
 interface ProductProps {
   type: "block" | "inline";
   img: string;
   overlay?: boolean;
   name: string;
-  price: string;
+  price: number;
   starImg: string;
   activeStartNumber: number;
   inactiveStart: number;
@@ -19,12 +20,12 @@ interface ProductProps {
 export const Product = ({
   type,
   img,
-  name,
-  price,
+  name = "computer",
+  price = 1000,
   overlay,
-  activeStartNumber,
-  inactiveStart,
-  oldPrice,
+  activeStartNumber = 3,
+  inactiveStart = 2,
+  oldPrice = 800,
   border,
   background,
   row,
@@ -34,10 +35,22 @@ export const Product = ({
   const renderStar = () => {
     const starts = [];
     for (let i = 0; i < activeStartNumber; i++) {
-      starts.push(<img src="/starActive.png" alt="star" />);
+      starts.push(
+        <img
+          src="/starActive.png"
+          alt="star"
+          className={type === "inline" ? "small-star" : ""}
+        />
+      );
     }
     for (let i = 0; i < inactiveStart; i++) {
-      starts.push(<img src="/startInactive.png" alt="star" />);
+      starts.push(
+        <img
+          src="/startInactive.png"
+          alt="star"
+          className={type === "inline" ? "small-star" : ""}
+        />
+      );
     }
     return starts;
   };
@@ -46,14 +59,14 @@ export const Product = ({
     return (
       <div
         className={[
-          "product-column",
-          `${row && "product-row"}`,
-          `${border && "border"}`,
-          `${background && "background"}`,
+          "product-block--column",
+          `${row && "product-block--row"}`,
+          `${border && "product-block--border"}`,
+          `${background && "product-block--background"}`,
         ].join(" ")}
       >
-        <div className="img-container">
-          <img src={img} alt="" className="product-img" />
+        <div className="product-block--img-container">
+          <img src={img} alt="" className="product-block--img" />
           {overlay && (
             <div className="product-overlay">
               <img
@@ -67,15 +80,45 @@ export const Product = ({
             </div>
           )}
         </div>
-        <div className="content-container">
+        <div className="product-block--content-container">
           {column && <div className="line"></div>}
-          <p className="product-name">{name}</p>
-          <div className="stars">{renderStar()}</div>
-          <p className="product-price">
-            ${price} <span className="old-price">${oldPrice}</span>
+          <p className="product-block--name">{name}</p>
+          <div className="product-block--stars">{renderStar()}</div>
+          <p className="product--price">
+            ${price} <span className="product--old-price">${oldPrice}</span>
           </p>
         </div>
       </div>
     );
-  return <div></div>;
+  return (
+    <div className="product-inline">
+      <div className="product-inline--img-container">
+        <img src={img} alt="img" className="product-inline--img" />
+        <img src="/hot.png" alt="hot" className="badge--hot" />
+      </div>
+      <div className="product-inline--content">
+        <p className="product--name">{name}</p>
+        <div className="product-inline--review-container">
+          <div>{renderStar()}</div>
+          <span className="product-inline--review">0 review</span>
+          <a href="" className="product-inline--submit-review">
+            Submit a review
+          </a>
+        </div>
+        <p className="product--price">
+          ${price} <span className="product--old-price">${oldPrice}</span>
+        </p>
+        <p>
+          Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et
+          mattis vulputate, tristique ut lectus. Sed et lectus lorem nunc
+          leifend laorevtr istique et congue. Vivamus adipiscin vulputate g nisl
+          ut dolor ...
+        </p>
+        <div className="product-inline--btns">
+          <Button hasIcon icon="cart" label="Add To Cart" size="small" />
+          <Button hasIcon icon="heart" size="small" />
+        </div>
+      </div>
+    </div>
+  );
 };

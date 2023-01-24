@@ -63,3 +63,24 @@ ProductBlockRow.parameters = {
     ],
   },
 };
+
+export const ProductInlineRow = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+ProductInlineRow.args = {
+  img: "/computer.png",
+  type: "inline",
+};
+ProductInlineRow.parameters = {
+  controls: {
+    include: [
+      "img",
+      "name",
+      "price",
+      "overlay",
+      "iconActive",
+      "activeStartNumber",
+      "inactiveStart",
+      "oldPrice",
+    ],
+  },
+};
