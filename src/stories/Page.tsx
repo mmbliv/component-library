@@ -5,15 +5,17 @@ import "./page.css";
 
 interface PageProps {
   children: JSX.Element | JSX.Element[] | string | string[];
+  type: string;
 }
 
-export const Page = ({ children }: PageProps) => {
+export const Page = ({ children, type }: PageProps) => {
   // const [user, setUser] = React.useState<User>();
-
-  return (
-    <article>
-      <Header />
-      {children}
-    </article>
-  );
+  if (type === "home")
+    return (
+      <article>
+        <Header />
+        {children}
+      </article>
+    );
+  return null;
 };
