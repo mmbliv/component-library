@@ -3,13 +3,13 @@ import { Button } from "./Button";
 
 interface ProductProps {
   type: "block" | "inline";
-  img: string;
+  img?: string;
   overlay?: boolean;
-  name: string;
-  price: number;
-  starImg: string;
-  activeStartNumber: number;
-  inactiveStart: number;
+  name?: string;
+  price?: number;
+  starImg?: string;
+  activeStartNumber?: number;
+  inactiveStart?: number;
   oldPrice?: number;
   column?: boolean;
   row?: boolean;

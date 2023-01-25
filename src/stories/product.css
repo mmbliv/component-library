@@ -75,7 +75,7 @@
   padding: 20px 10px;
   border: 2px solid #f1f3f4;
   height: 100%;
-  width: 70%;
+  width: 50%;
 }
 .badge--hot {
   position: absolute;
@@ -116,6 +116,7 @@
 }
 .product-inline--description {
   font-size: small;
+  text-align: left;
 }
 .product-inline--btns {
   display: flex;

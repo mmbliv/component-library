@@ -1,66 +1,50 @@
 import React from "react";
-
+import { Form } from "./Form";
 import { Button } from "./Button";
 import "./header.css";
-
+import { BsPerson, BsBasket, BsSearch } from "react-icons/bs";
 type User = {
   name: string;
 };
 
 interface HeaderProps {
   user?: User;
-  onLogin: () => void;
-  onLogout: () => void;
-  onCreateAccount: () => void;
+  itemsNumber?: number;
+  totalPrice?: number;
+  language?: { [key: number]: string };
+  currency?: { [key: number]: string };
 }
 
 export const Header = ({
   user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
+  itemsNumber = 0,
+  totalPrice = 0.0,
+  language = { "1": "EN", "2": "CN" },
+  currency = {
+    "1": "USD",
+    "2": "RMB",
+  },
 }: HeaderProps) => (
   <header>
     <div className="wrapper">
-      <div>
-        <svg
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g fill="none" fillRule="evenodd">
-            <path
-              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-              fill="#FFF"
-            />
-            <path
-              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-              fill="#555AB9"
-            />
-            <path
-              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-              fill="#91BAF8"
-            />
-          </g>
-        </svg>
-        <h1>Acme</h1>
+      <div className="header-options">
+        <Form options={language} type="selectInput" />
+        <Form options={currency} type="selectInput" />
       </div>
-      {/* <div>
-        {user ? (
-          <>
-            <span className="welcome">
-              Welcome, <b>{user.name}</b>!
-            </span>
-            <Button size="small" onClick={onLogout} label="Log out" />
-          </>
-        ) : (
-          <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button  size="small" onClick={onCreateAccount} label="Sign up" />
-          </>
-        )}
-      </div> */}
+      <div className="header-btns">
+        <button className="header-btns--profile">
+          <BsPerson />
+          My profile
+        </button>
+        <div className="header-btns--basket">
+          <BsBasket />
+          <p>{itemsNumber} items</p>
+          <p className="header-price">${totalPrice}</p>
+        </div>
+        <button className="header-btns--search">
+          <BsSearch />
+        </button>
+      </div>
     </div>
   </header>
 );
