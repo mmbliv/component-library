@@ -1,6 +1,6 @@
 import "./product.css";
 import { Button } from "./Button";
-
+import hot from "./assets/hot.png";
 interface ProductProps {
   type: "block" | "inline";
   img?: string;
@@ -94,7 +94,7 @@ export const Product = ({
     <div className="product-inline">
       <div className="product-inline--img-container">
         <img src={img} alt="img" className="product-inline--img" />
-        <img src="/hot.png" alt="hot" className="badge--hot" />
+        <img src={hot} alt="hot" className="badge--hot" />
       </div>
       <div className="product-inline--content">
         <p className="product--name">{name}</p>
