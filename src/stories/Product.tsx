@@ -4,8 +4,11 @@ import hot from "./assets/hot.png";
 import starInactive from "./assets/startInactive.png";
 import starActive from "./assets/starActive.png";
 import computerImg from "./assets/computer.png";
-import cart from "./assets/cart.png";
-import heart from "./assets/heart.png";
+// import heart from "./assets/heart.png";
+// import cart from "./assets/cart.png";
+// import activeCart from "./assets/activecart.png";
+// import activeHeart from "./assets/activeheart.png";
+import { ProductOverlay } from "./ProductOverlay";
 interface ProductProps {
   type: "block" | "inline";
   img?: string;
@@ -71,17 +74,12 @@ export const Product = ({
         ].join(" ")}
       >
         <div className="product-block--img-container">
-          <img src={img} alt="" className="product-block--img" />
+          <img src={computerImg} alt="" className="product-block--img" />
           {overlay && (
             <div className="product-overlay">
-              <img
-                src={iconActive ? "/activecart.png" : "/cart.png"}
-                alt="cart"
-              />
-              <img
-                src={iconActive ? "/activeheart.png" : "/heart.png"}
-                alt="heart"
-              />
+              {/* <img src={cart} alt="cart" />
+              <img src={iconActive ? activeHeart : heart} alt="heart" /> */}
+              <ProductOverlay active />
             </div>
           )}
         </div>
