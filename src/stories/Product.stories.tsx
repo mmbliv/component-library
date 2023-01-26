@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Product } from "./Product";
+import computerImg from "./assets/computer.png";
 
 export default {
   title: "Example/Product",
@@ -43,7 +44,7 @@ ProductBlockColumn.parameters = {
 export const ProductBlockRow = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ProductBlockRow.args = {
-  img: "/computer.png",
+  // img: computerImg,
   type: "block",
   row: true,
 };

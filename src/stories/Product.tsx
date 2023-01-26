@@ -1,6 +1,11 @@
 import "./product.css";
 import { Button } from "./Button";
 import hot from "./assets/hot.png";
+import starInactive from "./assets/startInactive.png";
+import starActive from "./assets/starActive.png";
+import computerImg from "./assets/computer.png";
+import cart from "./assets/cart.png";
+import heart from "./assets/heart.png";
 interface ProductProps {
   type: "block" | "inline";
   img?: string;
@@ -19,7 +24,7 @@ interface ProductProps {
 }
 export const Product = ({
   type,
-  img,
+  img = computerImg,
   name = "computer",
   price = 1000,
   overlay,
@@ -37,7 +42,7 @@ export const Product = ({
     for (let i = 0; i < activeStartNumber; i++) {
       starts.push(
         <img
-          src="/starActive.png"
+          src={starActive}
           alt="star"
           className={type === "inline" ? "small-star" : ""}
         />
@@ -46,7 +51,7 @@ export const Product = ({
     for (let i = 0; i < inactiveStart; i++) {
       starts.push(
         <img
-          src="/startInactive.png"
+          src={starInactive}
           alt="star"
           className={type === "inline" ? "small-star" : ""}
         />
@@ -93,7 +98,7 @@ export const Product = ({
   return (
     <div className="product-inline">
       <div className="product-inline--img-container">
-        <img src={img} alt="img" className="product-inline--img" />
+        <img src={computerImg} alt="img" className="product-inline--img" />
         <img src={hot} alt="hot" className="badge--hot" />
       </div>
       <div className="product-inline--content">
