@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import React from "react";
 import { Product } from "./Product";
-import computerImg from "./assets/computer.png";
 
 export default {
   title: "Example/Product",
