@@ -463,6 +463,7 @@ section .tip-wrapper svg path {
 .product-inline--btns {
   display: flex;
   justify-content: center;
+  gap: 10px;
 }
 
 *,
@@ -485,4 +486,4 @@ section .tip-wrapper svg path {
 }
 
 
-/*# sourceMappingURL=main.74275729.css.map*/
+/*# sourceMappingURL=main.f80d391c.css.map*/
