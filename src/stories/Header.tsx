@@ -1,8 +1,10 @@
 import React from "react";
 import { Form } from "./Form";
-import { Button } from "./Button";
 import "./header.css";
 import { BsPerson, BsBasket, BsSearch } from "react-icons/bs";
+import search from "./assets/search-icon.png";
+import bag from "./assets/bag_3.png";
+import profile from "./assets/profile_close_2.png";
 type User = {
   name: string;
 };
@@ -33,18 +35,26 @@ export const Header = ({
       </div>
       <div className="header-btns">
         <button className="header-btns--profile">
-          <BsPerson />
+          <img src={profile} alt="" />
           My profile
         </button>
         <div className="header-btns--basket">
-          <BsBasket />
+          <img src={bag} alt="" />
           <p>{itemsNumber} items</p>
           <p className="header-price">${totalPrice}</p>
         </div>
         <button className="header-btns--search">
-          <BsSearch />
+          <img src={search} alt="" />
         </button>
       </div>
     </div>
   </header>
 );
+// import { Button } from "./Button";
+// import { Form } from "./Form";
+// import { Header } from "./Header";
+// import { Page } from "./Page.js";
+// import { Product } from "./Product";
+// import { ProductOverlay } from "./ProductOverlay";
+
+// export { Button, Form, Header, Page, Product, ProductOverlay };

@@ -2,6 +2,8 @@ import React from "react";
 import "./button.css";
 import { BsHeart } from "react-icons/bs";
 import { BsCart } from "react-icons/bs";
+import heart from "./assets/hearts.png";
+import cart from "./assets/cart_2.png";
 interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
@@ -59,10 +61,11 @@ export const Button = ({
   const lighterColor = lighter && `button--${type}--lighter`;
   const setIcon = () => {
     if (icon === "heart") {
-      return <BsHeart />;
-    }
-    if (icon === "cart") {
-      return <BsCart />;
+      return heart;
+    } else if (icon === "cart") {
+      return cart;
+    } else {
+      return "";
     }
   };
   // handleOnClick = function (
@@ -85,7 +88,8 @@ export const Button = ({
         // style={{ backgroundColor,color,borderColor }}
         // {...props}
       >
-        {setIcon()}
+        {/* {setIcon()} */}
+        <img src={hasIcon ? setIcon() : ""} alt="" />
         {label}
       </button>
     );

@@ -1,0 +1,34 @@
+.wrapper {
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-options {
+  display: flex;
+  gap: 10px;
+}
+.header-btns {
+  display: flex;
+  gap: 25px;
+}
+.header-btns--basket {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.header-btns--profile,
+.header-btns--search {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  gap: 5px;
+}
+.header-price {
+  font-size: small;
+  color: rgba(115, 123, 128, 0.518);
+}

@@ -1,6 +1,14 @@
 import "./product.css";
 import { Button } from "./Button";
 import hot from "./assets/hot.png";
+import starInactive from "./assets/startInactive.png";
+import starActive from "./assets/starActive.png";
+import computerImg from "./assets/computer.png";
+// import heart from "./assets/heart.png";
+// import cart from "./assets/cart.png";
+// import activeCart from "./assets/activecart.png";
+// import activeHeart from "./assets/activeheart.png";
+import { ProductOverlay } from "./ProductOverlay";
 interface ProductProps {
   type: "block" | "inline";
   img?: string;
@@ -19,7 +27,7 @@ interface ProductProps {
 }
 export const Product = ({
   type,
-  img,
+  img = computerImg,
   name = "computer",
   price = 1000,
   overlay,
@@ -37,7 +45,7 @@ export const Product = ({
     for (let i = 0; i < activeStartNumber; i++) {
       starts.push(
         <img
-          src="/starActive.png"
+          src={starActive}
           alt="star"
           className={type === "inline" ? "small-star" : ""}
         />
@@ -46,7 +54,7 @@ export const Product = ({
     for (let i = 0; i < inactiveStart; i++) {
       starts.push(
         <img
-          src="/startInactive.png"
+          src={starInactive}
           alt="star"
           className={type === "inline" ? "small-star" : ""}
         />
@@ -66,17 +74,12 @@ export const Product = ({
         ].join(" ")}
       >
         <div className="product-block--img-container">
-          <img src={img} alt="" className="product-block--img" />
+          <img src={computerImg} alt="" className="product-block--img" />
           {overlay && (
             <div className="product-overlay">
-              <img
-                src={iconActive ? "/activecart.png" : "/cart.png"}
-                alt="cart"
-              />
-              <img
-                src={iconActive ? "/activeheart.png" : "/heart.png"}
-                alt="heart"
-              />
+              {/* <img src={cart} alt="cart" />
+              <img src={iconActive ? activeHeart : heart} alt="heart" /> */}
+              <ProductOverlay active />
             </div>
           )}
         </div>
@@ -93,7 +96,7 @@ export const Product = ({
   return (
     <div className="product-inline">
       <div className="product-inline--img-container">
-        <img src={img} alt="img" className="product-inline--img" />
+        <img src={computerImg} alt="img" className="product-inline--img" />
         <img src={hot} alt="hot" className="badge--hot" />
       </div>
       <div className="product-inline--content">
