@@ -1,6 +1,6 @@
 {
   "name": "component-library-hm",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "main": "lib/index.js",
   "files": [
@@ -8,6 +8,10 @@
   ],
   "dependencies": {
     "react-icons": "^4.7.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmbliv/component-library/tree/npm-config"
   },
   "scripts": {
     "start": "react-scripts start",

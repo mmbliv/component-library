@@ -2,20 +2,19 @@
 
 This is a component library built with [Storybook](https://storybook.js.org/).
 
-## Install
+## Installation
 
-- To use this package, you first need to have a React application installed.
-- Refer to this link for instructions on how to install a React application: [link](https://reactjs.org/docs/getting-started.html)
+- To use this package, you first need to have a React application installed. Refer to this [link](https://reactjs.org/docs/getting-started.html) for instructions on how to install a React application.
 - In your React application, run the following command:
 
-```js
-npm i component-library-hemin
-```
+  ```js
+  npm i component-library-hm
+  ```
 
 ## Usage
 
-- Refer to this link for the user interface of this component library: [link](https://mmbliv.github.io/component-library/?path=/story/example-introduction--page)
-- Each component has several different stories, for example, the Button component has three stories.
+- Refer to this [link](https://mmbliv.github.io/component-library/?path=/story/example-introduction--page) for the user interface of this component library
+- Each component has several different stories, for example, the Button component has three stories, which are 'Simply Button', 'Button With Icon' and 'Button With Outline'.
   ![screenshot](.imgs/Screenshot-1.png)
 - When you click on each story, you have access to control specific parts of the story.
   ![screenshot](.imgs/Screenshot-2.png)
