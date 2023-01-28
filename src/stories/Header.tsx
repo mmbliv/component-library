@@ -1,7 +1,6 @@
 import React from "react";
-import { Form } from "./Form";
+import { Form } from "./Form.js";
 import "./header.css";
-import { BsPerson, BsBasket, BsSearch } from "react-icons/bs";
 import search from "./assets/search-icon.png";
 import bag from "./assets/bag_3.png";
 import profile from "./assets/profile_close_2.png";

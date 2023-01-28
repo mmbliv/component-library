@@ -1,7 +1,5 @@
 import React from "react";
 import "./button.css";
-import { BsHeart } from "react-icons/bs";
-import { BsCart } from "react-icons/bs";
 import heart from "./assets/hearts.png";
 import cart from "./assets/cart_2.png";
 interface ButtonProps {

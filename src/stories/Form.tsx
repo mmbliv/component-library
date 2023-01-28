@@ -1,7 +1,5 @@
-import { kMaxLength } from "buffer";
-import { string } from "prop-types";
 import React, { useState, useRef } from "react";
-import { Button } from "./Button";
+import { Button } from "./Button.js";
 import "./form.css";
 interface FormProps {
   label?: string;

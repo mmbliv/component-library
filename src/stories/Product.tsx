@@ -1,5 +1,5 @@
 import "./product.css";
-import { Button } from "./Button";
+import { Button } from "./Button.js";
 import hot from "./assets/hot.png";
 import starInactive from "./assets/startInactive.png";
 import starActive from "./assets/starActive.png";
