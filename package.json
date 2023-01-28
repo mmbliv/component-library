@@ -1,6 +1,6 @@
 {
-  "name": "component-library-hemin",
-  "version": "0.1.0",
+  "name": "component-library-hm",
+  "version": "0.1.3",
   "private": false,
   "main": "lib/index.js",
   "files": [
